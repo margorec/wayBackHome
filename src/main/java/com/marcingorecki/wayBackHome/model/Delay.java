@@ -3,7 +3,7 @@ package com.marcingorecki.wayBackHome.model;
 import java.util.Objects;
 
 public class Delay {
-    private long id;
+    private String id;
     private int delayInSeconds;
     private String estimatedTime;
     private String headSign;
@@ -16,7 +16,7 @@ public class Delay {
     private String vehicleCode;
     private String vehicleId;
 
-    public Delay(long id, int delayInSeconds, String estimatedTime, String headSign, String routeId, String tripId, String status, String theoreticalDate, String timestamp, String trip, String vehicleCode, String vehicleId) {
+    public Delay(String id, int delayInSeconds, String estimatedTime, String headSign, String routeId, String tripId, String status, String theoreticalDate, String timestamp, String trip, String vehicleCode, String vehicleId) {
         this.id = id;
         this.delayInSeconds = delayInSeconds;
         this.estimatedTime = estimatedTime;
@@ -34,7 +34,7 @@ public class Delay {
     public Delay() {
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
