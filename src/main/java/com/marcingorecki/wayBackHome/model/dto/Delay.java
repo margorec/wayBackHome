@@ -1,4 +1,4 @@
-package com.marcingorecki.wayBackHome.model;
+package com.marcingorecki.wayBackHome.model.dto;
 
 import java.util.Objects;
 
@@ -6,25 +6,25 @@ public class Delay {
     private String id;
     private int delayInSeconds;
     private String estimatedTime;
-    private String headSign;
+    private String headsign;
     private String routeId;
     private String tripId;
     private String status;
-    private String theoreticalDate;
+    private String theoreticalTime;
     private String timestamp;
     private String trip;
     private String vehicleCode;
     private String vehicleId;
 
-    public Delay(String id, int delayInSeconds, String estimatedTime, String headSign, String routeId, String tripId, String status, String theoreticalDate, String timestamp, String trip, String vehicleCode, String vehicleId) {
+    public Delay(String id, int delayInSeconds, String estimatedTime, String headsign, String routeId, String tripId, String status, String theoreticalTime, String timestamp, String trip, String vehicleCode, String vehicleId) {
         this.id = id;
         this.delayInSeconds = delayInSeconds;
         this.estimatedTime = estimatedTime;
-        this.headSign = headSign;
+        this.headsign = headsign;
         this.routeId = routeId;
         this.tripId = tripId;
         this.status = status;
-        this.theoreticalDate = theoreticalDate;
+        this.theoreticalTime = theoreticalTime;
         this.timestamp = timestamp;
         this.trip = trip;
         this.vehicleCode = vehicleCode;
@@ -46,8 +46,8 @@ public class Delay {
         return estimatedTime;
     }
 
-    public String getHeadSign() {
-        return headSign;
+    public String getHeadsign() {
+        return headsign;
     }
 
     public String getRouteId() {
@@ -62,8 +62,8 @@ public class Delay {
         return status;
     }
 
-    public String getTheoreticalDate() {
-        return theoreticalDate;
+    public String getTheoreticalTime() {
+        return theoreticalTime;
     }
 
     public String getTimestamp() {
@@ -88,11 +88,11 @@ public class Delay {
                 "id=" + id +
                 ", delayInSeconds=" + delayInSeconds +
                 ", estimatedTime='" + estimatedTime + '\'' +
-                ", headSign='" + headSign + '\'' +
+                ", headsign='" + headsign + '\'' +
                 ", routeId='" + routeId + '\'' +
                 ", tripId='" + tripId + '\'' +
                 ", status='" + status + '\'' +
-                ", theoreticalDate='" + theoreticalDate + '\'' +
+                ", theoreticalTime='" + theoreticalTime + '\'' +
                 ", timestamp='" + timestamp + '\'' +
                 ", trip='" + trip + '\'' +
                 ", vehicleCode='" + vehicleCode + '\'' +
@@ -108,11 +108,11 @@ public class Delay {
         return id == that.id &&
                 delayInSeconds == that.delayInSeconds &&
                 Objects.equals(estimatedTime, that.estimatedTime) &&
-                Objects.equals(headSign, that.headSign) &&
+                Objects.equals(headsign, that.headsign) &&
                 Objects.equals(routeId, that.routeId) &&
                 Objects.equals(tripId, that.tripId) &&
                 Objects.equals(status, that.status) &&
-                Objects.equals(theoreticalDate, that.theoreticalDate) &&
+                Objects.equals(theoreticalTime, that.theoreticalTime) &&
                 Objects.equals(timestamp, that.timestamp) &&
                 Objects.equals(trip, that.trip) &&
                 Objects.equals(vehicleCode, that.vehicleCode) &&
@@ -121,6 +121,6 @@ public class Delay {
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, delayInSeconds, estimatedTime, headSign, routeId, tripId, status, theoreticalDate, timestamp, trip, vehicleCode, vehicleId);
+        return Objects.hash(id, delayInSeconds, estimatedTime, headsign, routeId, tripId, status, theoreticalTime, timestamp, trip, vehicleCode, vehicleId);
     }
 }

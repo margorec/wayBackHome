@@ -10,9 +10,26 @@
 <body>
 
 <div class="form-group has-error">
-    <h4 th:inline="text">
-        [[${data}]]
-    </h4>
+    <h4>Przystanek : </h4>
+
+    <div th:if="${not #lists.isEmpty(data)}">
+        <table class="sip">
+            <tbody>
+            <tr>
+                <th class="naglowek">Linia</th>
+                <th class="naglowek" style="min-width:200px;">Kierunek</th>
+                <th class="naglowek">Odjazd planowy</th>
+                <th class="naglowek">Odjazd rzczywisty</th>
+            </tr>
+            <tr th:each="bus : ${data.delay}">
+                <td th:text="${bus.routeId}"></td>
+                <td th:text="${bus.headsign}"></td>
+                <td th:text="${bus.theoreticalTime}"></td>
+                <td th:text="${bus.estimatedTime}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
 
 <script src="js/vendor/jquery.min.js"></script>

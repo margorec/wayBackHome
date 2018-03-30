@@ -1,6 +1,6 @@
 package com.marcingorecki.wayBackHome.controller;
 
-import com.marcingorecki.wayBackHome.model.Data;
+import com.marcingorecki.wayBackHome.model.dto.Data;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -17,8 +17,10 @@ public class MainController {
         RestTemplateBuilder builder = new RestTemplateBuilder();
         RestTemplate rt = builder.build();
             ResponseEntity<Data> response = rt.getForEntity("http://87.98.237.99:88/delays?stopId=14550", Data.class);
+        Data busstopData = response.getBody();
+        System.out.println(busstopData.getDelay());
 
-        model.addAttribute("data", response.getBody().getLastUpdate());
+        model.addAttribute("data", busstopData);
         return "mainView";
     }
 

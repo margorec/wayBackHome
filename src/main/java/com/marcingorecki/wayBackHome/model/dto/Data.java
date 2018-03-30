@@ -1,4 +1,4 @@
-package com.marcingorecki.wayBackHome.model;
+package com.marcingorecki.wayBackHome.model.dto;
 
 import java.util.List;
 import java.util.Objects;
